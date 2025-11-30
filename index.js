@@ -26,11 +26,6 @@ function createLoginTracker(userInfo) {
 
   return loginAttempt;
 }
-
-module.exports = {
-  createLoginTracker
-};
-
 module.exports = {
   ...(typeof createLoginTracker !== 'undefined' && { createLoginTracker })
 };
