@@ -1,15 +1,24 @@
 {
-  "name": "js-nested-arrow-functions-lab",
+  "name": "lab-nested-arrow-putting-it-all-together",
   "version": "1.0.0",
+  "description": "**Overview**",
   "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
   "scripts": {
-    "test": "jest"
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Donny254/lab-nested-arrow-putting-it-all-together.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
-  "devDependencies": {
-    "jest": "^29.7.0"
-  }
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Donny254/lab-nested-arrow-putting-it-all-together/issues"
+  },
+  "homepage": "https://github.com/Donny254/lab-nested-arrow-putting-it-all-together#readme"
 }
