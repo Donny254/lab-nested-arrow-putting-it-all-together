@@ -12,13 +12,13 @@ function createLoginTracker(userInfo) {
    */
   const loginAttempt = (passwordAttempt) => {
     if (attemptCount >= MAX_ATTEMPTS) {
-      return "Account locked due to too many failed login attempts";
+      return `Account locked due to too many failed login attempts`;
     }
     attemptCount++;
 
     if (passwordAttempt === userInfo.password) {
       attemptCount = 0;
-      return "Login Successful";
+      return `Login Successful`;
     } else {
       attemptCount++;
       return `Attempt ${attemptCount}:Login Failed`;
