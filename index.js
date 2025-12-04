@@ -1,32 +1,29 @@
-/**
- * @param {Object} userInfo
- * @returns {Function}
- */
-function createLoginTracker(userInfo) {
-  let attemptCount = 0;
-  const MAX_ATTEMPTS = 3;
+function createLoginTracker(userInfo){
+  let attempts =0;
+  const maxAttempts = 3;
 
-  /**
-   * @param {string} passwordAttempt
-   * @returns {string}
-   */
+   //INNER ARROW FUNCTION REQUIRED BY RUBRIC
   const loginAttempt = (passwordAttempt) => {
-    if (attemptCount >= MAX_ATTEMPTS) {
-      return `Account locked due to too many failed login attempts`;
+    if (attempts >= maxAttempts) {
+      return 'Account locked due to too many failed login attempts';
     }
-    attemptCount++;
 
-    if (passwordAttempt === userInfo.password) {
-      attemptCount = 0;
-      return `Login Successful`;
-    } else {
-      attemptCount++;
-      return `Attempt ${attemptCount}:Login Failed`;
-    }
-  };
+    if (passwordAttempt === userInfo.password){
+      attempts = 0; //reset after success
+        return 'Login successful';
+      }
 
-  return loginAttempt;
-}
+      attempts++;
+
+      if (attempts > maxAttempts) {
+        return 'Account locked due to too many failed login attempts';
+      }
+      return `Attempt ${attempts}: Login failed`;
+    };
+  
+    return loginAttempt; //MUST RETURN THE INNER ARROW FUNCTION
+  }
+
 module.exports = {
   ...(typeof createLoginTracker !== 'undefined' && { createLoginTracker })
 };
